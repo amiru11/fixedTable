@@ -1,0 +1,48 @@
+// table header-fixed
+
+@mixin header-fixed ($height, $column, $line-height) {
+  &.header-fixed {
+    width: 100%;
+    > * {
+      display: block;
+      > * {
+        display: block;
+      }
+    }
+    thead, tbody {
+      tr {
+        display: flex;
+        &:after {
+          content: ' ';
+          display: block;
+          visibility: hidden;
+          clear: both;
+        }
+      }
+    }
+    thead {
+      // width: calc(100% - 5.6px);
+    }
+    tbody {
+      overflow-y: auto;
+      max-height: $height;
+    }
+    th, td {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5em;
+      width: 100%/$column !important;
+    }
+    th {
+      white-space: nowrap;
+      line-height: $line-height !important;
+    }
+    td {
+      word-break: break-all;
+      overflow:hidden;
+      height:auto;
+      min-height: 57px;
+    }
+  }
+}

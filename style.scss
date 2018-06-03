@@ -1,0 +1,6 @@
+@charset "UTF-8";
+@import 'app_variant';
+
+table {
+  @include header-fixed(300px, 10, 41px);
+}
